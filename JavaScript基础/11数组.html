@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+     var arr1=new Array(); //没有长度
+     var arr2=new Array(5); //只有一个参数   是长度
+     var arr3=new Array(1,2,3,4,5);  // 定义数组的同时开辟空间并赋值
+     var  arr4=[1];
+    document.write("arr1.length"+arr1.length+"<br/>");
+    document.write("arr2.length"+arr2.length+"<br/>");
+    document.write("arr3.length"+arr3.length+"<br/>");
+    document.write("arr4.length"+arr4.length+"<br/>");
+    document.write("arr4[0]"+arr4[0]+"<br/>");
+    document.write("arr4[1]"+arr4[1]+"<br/>");
+
+    //定义一个字符串   转换成数据
+    var  str="haha,heihei,hehe,houhou";
+     var  arr5= str.split(","); //返回一个数据
+    document.write(arr5.length+"<br/>");
+    //向数组中添加一个元素
+    arr5.push("heiheihahahehe");
+     document.write("arr5[4]"+arr5[4]+"<br/>");
+    //把数组中的每一个元素通过一个分隔符 连接在一起 形成新的字符串
+     str=arr5.join("+");
+    document.write(str);
+
+</script>
+
+</body>
+</html>

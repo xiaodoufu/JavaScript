@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+
+<!-- 方法的调用-->
+  <input type="button" value="hello" onclick="sayHello();"> <br/>
+  <input type="button" value="bye" onclick="sayBye();"><br/>
+  <input type="button" value="haha" onclick="haha();"><br/>
+
+
+
+ <script type="text/javascript">
+
+
+
+       //01.定义一个函数
+         function sayHello(){
+             alert("大家好！");
+         }
+         //02.定义一个函数
+         var sayBye=function(){
+             alert("拜拜大家！");
+         }
+
+
+         function haha(){
+             sayHello();
+         sayBye();
+     }
+
+ </script>
+
+</body>
+</html>
