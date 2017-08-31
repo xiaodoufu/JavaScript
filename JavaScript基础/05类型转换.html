@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+    var  num1="123.45a",num2="a123.45";
+    /*
+     * parseInt()：前提字符串第一个位置必须是数字，直到遇到 . 或者 非数字时 返回     得到整数
+     * parseFloat():前提字符串第一个位置必须是数字 直到遇到  非数字时 返回            得到浮点数
+     */
+    document.write(parseInt(num1)+"<br/>");
+    document.write(parseInt(num2)+"<br/>");  //NaN  说明不是一个数字
+    document.write(parseFloat(num1)+"<br/>");
+    document.write("<hr/>");
+    /**
+     * 强制类型转换
+     * Boolean():里面的参数 只要不是false,0,null,undefied,空,NaN,未定义的变量 之外  都会返回true
+     * Number(): 是把整个字符串 作为 参数之后进行强制类型转换 ！  要确保参数是 数值类型 或者boolean    true=1  false=0;
+     * String()
+     */
+    document.write(Boolean(true)+"<br/>");
+    document.write(Number(num1)+"<br/>");
+    document.write(String(typeof (num1))+"<br/>");
+    alert(typeof 1);
+    alert(typeof (1)); //推荐使用
+
+</script>
+
+</body>
+</html>
