@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>输入和确认</title>
+</head>
+<body>
+
+<!--
+    alert("大家\n辛苦了");  // \n是换行
+      alert：是一个提示框，具有确定按钮！
+    confirm：是一个提示框，具有确定和取消按钮！
+    prompt：是一个对话框，有两个参数
+           01.第1个参数，是提示语
+           02.第2个参数，是输入框的默认值 ， 可以省略此参数
+-->
+  <script type="text/javascript">
+
+    var flag=  confirm("你想迎娶白富美吗？");
+    if(flag){  //用户点击的是确定
+       var answer=  prompt("你月收入多少呀？","请输入收入"); //获取用户的输入
+        document.write("您的收入是："+answer);
+    }else{
+        alert("你就一屌丝！")
+    }
+
+
+  </script>
+
+</body>
+</html>
