@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本事件</title>
+</head>
+<body>
+<!--
+ javascript:  伪协议！
+  当我们运行到javascript:  的时候，程序会先执行对应的js代码！之后再操作！
+  无论是超链接还是提交按钮，都不会立即执行！
+ -->
+  <a href="javascript:">跳转</a>  <br/>
+  <input type="button"  value="普通按钮" onclick="javascript:alert('你说可以');"> <br/>
+
+ <input  type="text" placeholder="请输入用户名" on  onblur="javascript:alert('失去焦点');">
+<!--
+onfocus="javascript:alert('获取焦点');"
+-->
+</body>
+</html>
