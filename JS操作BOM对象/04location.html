@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>location对象</title>
+    <!--
+    location对象
+       常用方法：
+        reload（）:刷新页面
+        replace():使用新的页面替换当前页面
+       常用属性：
+        host：主机名+端口号
+        hostname:主机名
+        href：完整的url
+        hash:返回#之后的所有字符串
+        search:返回?之后的所有字符串
+    -->
+
+</head>
+<body>
+
+<a  href="javascript:doubleC();">百度</a>
+
+<script type="text/javascript">
+     document.write("host值为："+location.host+"<br/>");
+     document.write("hostname值为："+location.hostname+"<br/>");
+     document.write("href值为："+location.href+"<br/>");
+     document.write("hash值为："+location.hash+"<br/>");
+     document.write("search值为："+location.search+"<br/>");
+
+   var flag=   confirm("确定跳转页面吗？");
+     if(flag){
+         location.href="http://www.baidu.com";
+     }
+    //当用户点击百度 超链接时触发的事件
+    function  doubleC(){
+        location.href="http://www.jd.com";
+    }
+
+</script>
+
+</body>
+</html>
