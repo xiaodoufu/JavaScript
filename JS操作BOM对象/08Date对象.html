@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+    <!--
+    Date对象:
+      getDate()：获取是一个月中的哪一天？ 1-31
+      getDay（）：获取是一周中的哪一天？  0-6
+      getHours（）：获取是一天中的小时  0-23
+      getMinutes（）：获取是分钟 0-59
+      getSeconds（）：获取是秒数  0-59
+      getMonth（）：获取是一年中的第几个月？  0-11
+      getFullYear():获取年份
+      getTime():返回1970年1月1日到现在的毫秒数
+    -->
+</head>
+<body>
+
+
+<script type="text/javascript">
+       var  today=new Date();  //当前的系统时间
+      document.write(today);
+    //获取年月日
+      var year= today.getFullYear();
+      var month= today.getMonth()+1;
+      var date= today.getDate();
+      var hours= today.getHours();
+      var min= today.getMinutes();
+      var s= today.getSeconds();
+   document.write("当前系统时间是："+year+"年:"+month+"月:"+date+"日&nbsp;&nbsp;&nbsp;"+hours+":"+min+":"+s)
+</script>
+</body>
+</html>

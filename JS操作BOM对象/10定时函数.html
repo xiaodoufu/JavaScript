@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>定时函数</title>
+    <!--
+    01. setTimeout函数   在一个指定的时间点，去指定一个指定的函数
+    02.setInterval函数   每隔多少时间就会执行一次指定的函数
+    -->
+</head>
+<body>
+   <div id="nowTime"></div>
+   <button type="button"  onclick="setOne();"> setTimeout函数</button>
+   <button type="button"  onclick="clearOne();"> 清空setTimeout函数</button>
+
+
+   <button type="button"  onclick="setTwo();"> setInterval函数</button>
+   <button type="button"  onclick="clearTwo();"> 清空setInterval函数</button>
+
+<script type="text/javascript">
+    var  num=0;  //成员变量
+  function one(){
+      //获取页面中空元素 并赋值
+      document.getElementById("nowTime").innerHTML="数字："+(++num);
+  }
+
+    //声明 定时函数的变量
+    var  timeout,intervar;
+     function setOne(){  //设置定时函数
+         timeout=setTimeout("one()",2000);
+     }
+
+    function  clearOne(){//清空定时函数
+        clearTimeout(timeout);
+    }
+
+
+
+    function  setTwo(){  //周期性的执行 one（）函数
+        intervar=setInterval("one()",1000);
+    }
+    function  clearTwo(){  //周期性的执行 one（）函数
+        clearInterval(intervar);
+    }
+
+</script>
+</body>
+</html>
