@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        body{font-size:14px;
+            line-height:30px;
+        }
+        input{margin:1px;
+            width:90px;
+            font-size:12px;
+            padding:0;
+        }
+        #node{
+            width:100px;
+            font-size:24px;
+            font-weight:bold;
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        /*改变层内容*/
+        function changeLink(){
+            //获取页面中id属性值是node的节点
+          var  node= document.getElementById("node");
+         //   node.innerText="<h1 style='color:red'>haha</h1>";   innerText：会把整个内容当成文本来输出！
+              node.innerHTML="<h3 style='color:red'>haha</h3>";//innerHTML:会编译内容中的html标签以及样式
+        }
+        /*获取所有input标签中所有的value值*/
+        function all_input(){
+          var allInputs= document.getElementsByTagName("input");  // 是一个数组
+            var result="";
+            for(var i=0;i<allInputs.length;i++){
+                result+= allInputs[i].value+"<br/>";
+            }
+            //把所有的结果 给 id=s的元素
+            document.getElementById("s").innerHTML=result;
+        }
+        /*获取所有name属性值是season的value*/
+        function s_input(){
+            var allSeasons= document.getElementsByName("season");  // 是一个数组
+            var result="";
+            for(var i=0;i<allSeasons.length;i++){
+                result+= allSeasons[i].value+"<br/>";
+            }
+            //把所有的结果 给 id=s的元素
+            document.getElementById("s").innerHTML=result;
+        }
+
+    </script>
+</head>
+<body>
+<div id="node">新浪</div>
+<input name="b1" type="button" value="改变层内容" onclick="changeLink();" /><br />
+<br /><input name="season" type="text" value="春" />
+<input name="season" type="text" value="夏" />
+<input name="season" type="text" value="秋" />
+<input name="season" type="text" value="冬" />
+<br /><input name="b2" type="button" value="显示input内容" onclick="all_input()" />
+<input name="b3" type="button" value="显示season内容" onclick="s_input()" />
+<p id="s"></p>
+</body>
+</html>

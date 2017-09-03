@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>document对象</title>
+    <!--
+    document对象
+      常用的方法：
+        write（）:在页面中书写内容
+        getElementById(): 获取页面中指定id的对象！ 一个对象
+        getElementsByName("sex"): 获取页面中所有name属性值为sex的对象 ！ 数组
+        getElementsByTagName("div"): 获取页面中所有标签为div的对象 ！ 数组
+
+    常用的属性：
+    referrer:
+            当浏览器向web服务器发送请求的时候，一般会带上referrer，
+            告诉服务器我是从哪个页面链接过来的，服务器基此可以获得一些信息用于处理。
+    url： 返回当前页面的url
+    -->
+</head>
+<body>
+
+ <script type="text/javascript">
+     document.write("document.referrer的值是："+document.referrer);
+
+ </script>
+
+</body>
+</html>
