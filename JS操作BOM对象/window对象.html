@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>window对象</title>
+
+    <!--
+    BOM:(浏览器对象模型  Browser   Object Model)
+       浏览器页面的 前进   后退  刷新  页面跳转 都是Bom！
+       对整个浏览器窗口进行交互的对象模型！
+     包含的内容（对象）：
+     1.window对象
+           01.history  属性
+           02.location 属性
+     2.document对象
+
+
+     window对象
+         常用的属性：
+           01.history  属性
+           02.location 属性
+         常用的方法：
+            alert()  :只有一个对话框和一个确认按钮
+            prompt() ：提示用户输入的对话框
+            confirm（）：有一个确认按钮和取消按钮的对话框
+            close(): 关闭浏览器窗口
+            open()：打开一个新的浏览器窗口
+            定时函数：
+             01.setTimeout():在指定毫秒数之后，执行某个方法！ 只执行一次
+             02.setInterval():每间隔指定的毫秒数，都会执行一次！
+
+       window.open("弹出的窗口url"，"窗口的名称"，"窗口的特性")
+
+    -->
+</head>
+<body>
+
+<script  type="text/javascript">
+
+    var  flag= confirm("确定关闭本窗口吗？");
+      if(flag){
+          window.close();  //浏览器窗口关闭
+      }else{
+          //window.open("http://www.baidu.com","百度首页");
+          window.open("http://www.baidu.com","百度首页","height=400,width=400");
+      }
+
+</script>
+</body>
+</html>
