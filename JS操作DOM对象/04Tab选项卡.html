@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tab切换</title>
+    <style type="text/css">
+        #tab{ width: 400px;}
+        #tab ul{list-style: none;overflow:hidden;margin:0px;padding:0px;}
+        #tab ul li{float:left;padding:5px 10px;border:1px solid #eee;cursor:pointer;}
+        #tab ul li.cur{background-color: red}
+        #tab .content{width:100%;border:1px solid #eeeeee;height: 100px;}
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul>
+        <li class="cur">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+        <li>tab4</li>
+    </ul>
+    <div id="c-box">
+        <div class="content" id="content-0">
+            tab-1第一个容器的内容
+        </div>
+        <div class="content" id="content-1" style="display: none;">
+            tab-2第二个容器的内容
+        </div>
+        <div class="content" id="content-2" style="display: none;">
+            tab-3第3个容器的内容
+        </div>
+        <div class="content" id="content-3" style="display: none;">
+            tab-4第4个容器的内容
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        //获取页面中需要得所有li的集合
+        var liList=document.getElementsByTagName("li");
+        //循环li集合
+        for(var i=0;i<liList.length;i++){
+            liList[i].index=i;  //当前选中的li
+            liList[i].onmouseover=function(){ //鼠标移入事件
+                for(var j=0;j<liList.length;j++){  //循环div
+                    document.getElementById("content-"+j).style.display="none"; //所有div的都隐藏
+                    liList[j].className="";  //清除所有的li 的class属性值
+                }
+               liList[this.index].className="cur";//设置选中的li样式
+               document.getElementById("content-"+this.index).style.display="block"; //显示选中的li对应div
+          }
+        }
+
+    </script>
+</body>
+</html>

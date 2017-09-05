@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Style样式</title>
+    <!--
+      之前接触的 行内样式 style 是css设置样式
+      现在我们使用的是js中的设置样式！
+    -->
+    <style type="text/css">
+        #myDiv{
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+
+
+
+
+</head>
+<body>
+
+  <div  id="myDiv" style="border: 1px solid red"></div>
+
+  <button type="button" onclick="changeBackground();">换背景色</button>
+  <button type="button" onclick="changeMargin();">换外边距</button>
+
+
+<script type="text/javascript">
+     var div=document.getElementById("myDiv");
+
+     /**
+      *  通过js中的style属性来设置样式
+      *
+      *  注意点：
+      *  01.css中有的属性我们 style中都有
+      *  02.只不过属性名写法不一致
+      *     比如说  css font-size       style fontSize
+      */
+
+     function changeBackground(){
+         div.style.backgroundColor="pink";  //改变背景颜色
+     }
+     function changeMargin(){
+         div.style.marginLeft="50px";  //改变外边距
+     }
+</script>
+
+</body>
+</html>
