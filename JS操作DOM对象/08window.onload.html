@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>window.onload</title>
+    <!--
+      window.onload
+      注意点：
+      01.在整个页面中只能存在一次，否则后面会覆盖前面
+      02.页面中所有的内容加载完毕之后才执行！
+      03.没有简写的方法
+    -->
+
+</head>
+<body>
+
+<img src="../images/cat.jpg">
+
+<script type="text/javascript">
+    //alert("页面没有加载完毕就可能执行！");
+    window.onload=function(){
+        alert("页面中所有的内容加载完毕之后才执行！");
+    }
+
+</script>
+</body>
+</html>

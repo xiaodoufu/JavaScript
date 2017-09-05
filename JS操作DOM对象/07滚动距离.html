@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>滚动距离</title>
+    <style type="text/css">
+        *{margin:0;padding: 0;}
+        #box1{height:200px;width: 200px;background:#eee;border:1px solid #000;overflow-y:scroll;}
+        p{line-height:40px;}
+    </style>
+    <script type="text/javascript">
+  window.onload=function(){
+      var box1=document.getElementById("box1");
+      var text=document.getElementById("text");
+      //当div滚动的时候
+      box1.onscroll=function(){
+          text.innerHTML="距离TOP多少像素："+box1.scrollTop;
+      }
+  }
+    </script>
+</head>
+<body>
+<div id="box1">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <p>5</p>
+    <p>6</p>
+    <p>7</p>
+    <p>8</p>
+    <p>9</p>
+    <p>10</p>
+    <p>11</p>
+    <p>12</p>
+    <p>13</p>
+    <p>14</p>
+</div>
+<div id="text"></div>
+</body>
+</html>
