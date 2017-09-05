@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>节点的增删改</title>
+</head>
+<body>
+<ul>
+    <li>大家辛苦了1</li>
+    <li>大家辛苦了2</li>
+    <li>大家辛苦了3</li>
+    <li>大家辛苦了4</li>
+    <li>大家辛苦了5</li>
+    <li>大家辛苦了6</li>
+    <li>大家辛苦了7</li>
+    <li>大家辛苦了8</li>
+    <li>大家辛苦了9</li>
+    <li>大家辛苦了10</li>
+    <li>大家辛苦了11</li>
+    <li>大家辛苦了12</li>
+</ul>
+
+
+<script type="text/javascript">
+    //首先获取页面中的第一个ul
+    var ul= document.getElementsByTagName("ul")[0];
+    //创建一个新的节点
+    var  newLi=document.createElement("li");
+    //给新节点的增加内容
+    newLi.innerHTML="<h1>哈哈</h1>";
+    //在第7 个位置之前 把新增的li放入
+    var needLi= ul.getElementsByTagName("li")[6];
+    //ul.insertBefore(newLi,needLi); // 把newLi放在needLi之前
+
+    //替换指定的节点
+    var repLi= ul.getElementsByTagName("li")[9];
+    ul.replaceChild(newLi,repLi);
+
+    //删除指定的节点
+    ul.removeChild(newLi);
+
+    //clone  UL
+    var newUl= ul.cloneNode(true);
+    // 在body中增加 ul
+    ul.parentNode.appendChild(newUl);
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
