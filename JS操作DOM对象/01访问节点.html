@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>访问节点</title>
+
+    <!--
+    DOM（Document Object Model） 文档对象模型
+    HTML-DOM
+    CSS-DOM
+    XML-DOM
+
+    DOM-CORE
+
+    noteType的返回值：
+    1 ：元素节点
+    2 ：属性节点
+    3 ：文本节点
+    8 ：注释节点
+    9 ：文档节点
+
+
+    -->
+</head>
+<body>
+
+  <ul>
+      <li>大家辛苦了1</li>
+      <li>大家辛苦了2</li>
+      <li>大家辛苦了3</li>
+  </ul>
+
+ <img src="../images/cat.jpg" alt="这是一只可爱的小猫咪"  id="cat">
+  
+  
+
+<script type="text/javascript">
+    //获取ul中的第一个li
+   var ul= document.getElementsByTagName("ul")[0];
+    //输出节点的名称
+    document.write("ul节点的名称:"+ul.nodeName+"<br/>");
+    document.write("ul节点的类型:"+ul.nodeType+"<br/>");
+    document.write("ul节点的值:"+ul.nodeValue+"<br/>");
+    // 01.获取ul中的第一个li  元素节点
+    var li=ul.firstElementChild;
+    document.write("li节点的名称:"+li.nodeName+"<br/>");
+    document.write("li节点的类型:"+li.nodeType+"<br/>");
+    document.write("li节点的值:"+li.nodeValue+"<br/>");
+
+  //获取小猫咪
+    var cat=document.getElementById("cat");
+    document.write("img节点的名称:"+cat.nodeName+"<br/>");
+    document.write("img节点的类型:"+cat.nodeType+"<br/>");
+    document.write("img节点的值:"+cat.nodeValue+"<br/>");
+
+  //动态改变小猫咪的 宽度和高度
+    cat.setAttribute("width","200px");
+    cat.setAttribute("height","200px");
+  //获取我们的属性对应的属性值
+    var src= cat.getAttribute("src");
+    document.write("src:"+src+"<br/>");
+    //02.获取属性节点
+    var alt= cat.getAttributeNode("alt");
+    document.write("img节点alt的名称:"+alt.nodeName+"<br/>");
+    document.write("img节点alt的类型:"+alt.nodeType+"<br/>");
+    document.write("img节点alt的值:"+alt.nodeValue+"<br/>");
+
+
+    //03. 获取第一个li的内容
+   var  text= li.firstChild;  //文本节点
+    document.write("text的名称:"+text.nodeName+"<br/>");
+    document.write("text的类型:"+text.nodeType+"<br/>");
+    document.write("text的值:"+text.nodeValue+"<br/>");
+
+</script>
+
+</body>
+</html>
