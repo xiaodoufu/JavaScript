@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>原型对象</title>
+
+    <!--
+       注意点:
+       01.所有的对象都有一个constructor属性！指向了构造函数！
+       02.每个函数中都有一个prototype属性（原型对象），
+          这个属性就是一个指针，指向了一个原型对象！
+       03.prototype就是通过构造函数来创建这个对象的原型对象！
+       04.每个对象都有一个__proto__属性，指向了原型对象！
+    -->
+</head>
+<body>
+
+<script type="text/javascript">
+
+    /*创建一个构造函数*/
+    function  Student(){}
+   //通过原型对象来创建对象
+    Student.prototype.name;
+    Student.prototype.age;
+    Student.prototype.address;
+    Student.prototype.sayHello=function(){
+        document.write("姓名："+this.name+"<br/>");
+        document.write("年龄："+this.age+"<br/>");
+        document.write("住址："+this.address+"<br/>");
+    }
+
+    var  stu1=new Student();
+    stu1.name="小白";
+    stu1.age=52;
+    stu1.address="天上人间";
+    var  stu2=new Student();
+    stu2.sayHello();
+    // 验证每个对象都有一个__proto__属性，指向了原型对象！
+    document.write(stu2.__proto__==Student.prototype);
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

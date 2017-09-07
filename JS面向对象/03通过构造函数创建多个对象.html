@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>通过构造函数创建多个对象</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //创建构造函数   函数名称首字母必须大写
+    function Student(name,age,address){
+         //声明属性并赋值
+        this.name=name;
+        this.age=age;
+        this.address=address;
+        //设置方法
+        this.sayHello=function(){
+            document.write("姓名："+this.name+"<br/>");
+            document.write("年龄："+this.age+"<br/>");
+            document.write("住址："+this.address+"<br/>");
+        }
+    }
+
+    //创建多个对象
+    var  stu1=new Student("小黑1",50,"天堂1");
+    var  stu2=new Student("小黑2",51,"天堂2");
+    var  stu3=new Student("小黑3",52,"天堂3");
+
+  //分别调用对象的方法
+    stu1.sayHello();
+    stu2.sayHello();
+    stu3.sayHello();
+
+  // 所有的对象都有一个constructor属性！指向了构造函数！
+    document.write("stu1.constructor指向了Student："+(stu1.constructor==Student)+"<br>");
+
+    //instanceof 判断某个对象是否属于某个类型
+    document.write("stu1属于Student吗？"+(stu1 instanceof Student)+"<br>");
+    document.write("stu1属于Object吗？"+(stu1 instanceof Object)+"<br>");
+    document.write("stu1属于Function吗？"+(stu1 instanceof Function)+"<br>");
+
+
+
+
+
+</script>
+
+</body>
+</html>
