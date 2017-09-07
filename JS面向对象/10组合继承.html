@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>组合继承</title>
+
+    <!--
+    组合继承：
+
+    有时也叫做伪经典继承将原型链和借用构造函数的技术组合到一块，
+
+    发挥二者之长的一种继承模式使用原型链实现对原型属性和方法的继承，
+    而通过借用构造函数来实现对实例属性的继承
+
+    -->
+</head>
+<body>
+<script type="text/javascript">
+    /*构造方法*/
+    function  Person(name){
+        this.name=name;
+        this.names=["hei","bai","pei"];
+    }
+    Person.prototype.sayHello=function(){
+        alert(this.name);
+    }
+
+
+    function  Student(name,age){
+        Person.call(this,name); //继承属性  借用构造
+        this.age=age;
+    }
+    Student.prototype=new Person();//继承了方法  原型链
+    //student特有的方法
+    Student.prototype.sayBey=function(){
+        alert(this.name);
+    }
+    /*创建对象*/
+    var  stu=new Student("小黑黑",50);
+    stu.names.push("小白白");
+    document.write(stu.names+"<br/>");
+    stu.sayHello();
+    stu.sayBey();
+
+    var  stu1=new Student("小黑黑2",50);
+    document.write(stu1.names+"<br/>");
+    stu1.sayHello();
+    stu1.sayBey();
+
+</script>
+</body>
+</html>
