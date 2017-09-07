@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>原型链</title>
+
+    <!--
+     原型链：
+
+     01.一个原型对象是另一个原型对象的实例！  小猫是动物的一个实例！
+     02. 相关的原型链层层递进，就构成了实例和原型对象的链条，我们就称之为原型链！
+
+        蹲在角落里的那只黑猫 （实例）
+        继承了
+        猫类（01.相当于黑猫来说是原型对象 02.相对于动物来说是一个实例）
+        继承了
+        动物类（01.所有动物的原型对象 02.object的实例）
+        继承了
+        Object（所有原型对象的顶级）
+
+        只要是个对象都有__proto__属性，指向了原型对象！
+        问题：
+          Object是对象！
+          有__proto__属性！
+          属性值是null！
+    -->
+</head>
+<body>
+
+
+<script type="text/javascript">
+      //模拟一个构造函数
+      var   Student=function(){};
+     var stu1=new Student();
+
+    document.write(stu1.__proto__+"<br/>");
+    document.write(stu1.__proto__.__proto__+"<br/>");
+    document.write(stu1.__proto__.__proto__.__proto__+"<br/>");  //null
+    document.write("===================================");
+      document.write((stu1.__proto__===Object.prototype)+"<br/>");  //false
+      document.write((Student.prototype.__proto__===Object.prototype)+"<br/>");  //true
+
+</script>
+
+
+
+</body>
+</html>

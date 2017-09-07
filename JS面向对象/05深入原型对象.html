@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>深入原型对象</title>
+</head>
+<body>
+<!--
+        01.prototype属性只有函数才有！
+        02.每个对象都有一个__proto__属性，指向了原型对象！
+-->
+<script type="text/javascript">
+    //01.验证只有函数有prototype属性
+    var  a={};
+    document.write(a.prototype+"<br/>");
+    document.write(a.__proto__+"<br/>");
+
+    var b=function(){}
+    document.write(b.prototype+"<br/>");
+    document.write(b.__proto__+"<br/>");
+
+    var c=new b();
+    // 02.验证每个对象都有一个__proto__属性，指向了原型对象！
+    document.write(c.__proto__== b.prototype);
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
