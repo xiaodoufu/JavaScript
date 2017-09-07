@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>借用构造函数的同时传递参数</title>
+</head>
+<body>
+
+   <script type="text/javascript">
+         //创建Animal的构造
+       function Animal(name){
+         this.name=name;
+       }
+       //创建Dog的构造
+       function Dog(){
+           //借用构造  传递参数
+           Animal.call(this,"小黑狗");
+           this.age=50;
+       }
+       //创建Cat的构造
+       function Cat(){
+           //借用构造
+           Animal.call(this,"小猫咪");
+           this.health=100;
+       }
+         //创建小狗的实例
+       var dog1=new Dog();
+       document.write(dog1.name);
+       document.write(dog1.age);
+         //创建小猫咪的实例
+       var cat1=new Cat();
+       document.write(cat1.name);
+       document.write(cat1.health);
+   </script>
+
+
+</body>
+</html>

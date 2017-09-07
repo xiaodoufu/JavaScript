@@ -32,9 +32,9 @@
         //模拟一个构造函数
           var   Student=function(){};
          var stu1=new Student();
-            document.write(stu1.__proto__+"<br/>");
-            document.write(stu1.__proto__.__proto__+"<br/>");
-            document.write(stu1.__proto__.__proto__.__proto__+"<br/>");  //null
+            document.write(stu1.__proto__+"<br/>"); //student
+            document.write(stu1.__proto__.__proto__+"<br/>");//function
+            document.write(stu1.__proto__.__proto__.__proto__+"<br/>");  //  object null
             document.write("===================================");
           document.write((stu1.__proto__===Object.prototype)+"<br/>");  //false
           document.write((Student.prototype.__proto__===Object.prototype)+"<br/>");  //true

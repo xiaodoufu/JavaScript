@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>借用构造函数</title>
+</head>
+<body>
+
+   <script type="text/javascript">
+         //创建Animal的构造
+       function Animal(){
+           this.names=["小猫","小狗","小刺猬"];
+       }
+       //创建Dog的构造
+       function Dog(){
+           //借用构造
+           Animal.call(this);   //调用一个对象的方法，产生一个新的对象！ 继承了Animal
+           this.age=50;
+       }
+
+      // Dog.prototype=new Animal();  //使用原型链产生继承
+       var dog1=new Dog();
+       dog1.names.push("小黑猫");
+       document.write(dog1.names+dog1.age);
+
+
+
+
+   </script>
+
+
+</body>
+</html>
