@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>通过字面量来创建对象</title>
+</head>
+<body>
+     <!--
+      创建一个学生对象
+      {属性1:值1，属性2:值2，属性3:值3}
+      json数据格式：是一种数据转换格式
+       01.是一个键值对的形式
+       02.对象保存在｛｝中
+       03.集合保存在[]中
+       04.数据由逗号分隔，属性和属性值使用冒号分割
+     -->
+     <button type="button" onclick="showInfo();">点击显示学生信息</button>
+
+<script type="text/javascript">
+     var student={
+         age:50,
+         name:"小黑",
+         address:"海淀区",
+        sayHello:function(){  //方法
+            document.write("姓名："+this.name+"<br/>");
+            document.write("年龄："+this.age+"<br/>");
+            document.write("住址："+this.address+"<br/>");
+        }
+     }
+
+    // student 我们称之为变量   =右边的｛｝中的数据，我们称之为 字面量！
+
+     //用户点击按钮触发的事件
+     function showInfo(){
+         student.sayHello(); //调用student的方法
+     }
+
+     // 问题依然存在：现在只是创建了一个对象！ 如果我们想创建多个 那么代码冗余！
+
+
+</script>
+
+
+
+</body>
+</html>

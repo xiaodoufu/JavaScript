@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>创建对象</title>
+
+</head>
+<body>
+
+
+
+
+<!--
+  对象： 对象是包含了属性和方法的集合体！
+
+  什么是面向对象呢？
+  01.面向对象就是一种编程思想，是一个概念！
+  02.在js中，通过一种叫做原型的方式来实现面向对象编程！
+-->
+
+<button type="button" onclick="showInfo();">点击显示学生信息</button>
+
+
+
+
+<script type="text/javascript">
+     //创建一个学生对象
+     var student=new Object();
+    //创建对象的属性并且赋值
+    student.age=50;
+    student.name="小黑";
+    student.address="海淀区";
+
+    //创建对象的方法
+    student.sayHello=function(){
+        document.write("姓名："+student.name+"<br/>");
+        document.write("年龄："+student.age+"<br/>");
+        document.write("住址："+this.address+"<br/>");
+    }
+
+    //用户点击按钮触发的事件
+    function showInfo(){
+        student.sayHello(); //调用student的方法
+    }
+
+    //现在只是创建了一个对象！ 如果我们想创建多个 那么代码冗余！
+</script>
+
+
+
+
+
+
+</body>
+</html>
