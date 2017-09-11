@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dom和jquery互换</title>
+    <!--
+   所有通过js的getElement系列获取的对象！我们称之为DOM对象！
+   那么这个DOM对象不可能用jquery中的方法！
+
+   $("选择器")这种方式获取的对象！我们称之为jQuery对象！
+   jQuery对象也不能使用DOM对象的方法！
+
+   这两个对象 分别有 自己的一套方法！  不能混用！ 除非转换成对应的对象！
+
+    -->
+</head>
+<body>
+
+
+<div id="myDiv">第一个盒子</div>
+<div id="second">第2个盒子</div>
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/07changeAll.js"></script>
+</body>
+</html>
