@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>初始jQuery</title>
+    <!--
+    jQuery:  就是一个简洁的javaScript框架！ 设计理念：  write less  do more!
+
+    使用jQuery:  引入需要的js库！
+
+    jquery-1.8.3.js                开发版 便于阅读     200kb
+    jquery-1.8.3.min.js            生产版  压缩了文件  100kb
+    -->
+</head>
+<body>
+
+ <div id="myDiv"></div>
+  <a href="javascript:"  onclick="changeDiv();"  name="haha">点击改变div的背景</a>
+
+
+
+<!-- 引入需要的js库  必须位于第一个位置-->
+ <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+ <script type="text/javascript" src="../js/01base.js"></script>
+ <script type="text/javascript" src="../js/02function.js"></script>
+
+</body>
+</html>
+
+<!--
+  window.onload  和   $(document).ready() 区别
+  01.执行时机不同
+     window.onload必须等待网页中所有的元素加载完毕，才会执行！
+     $(document).ready()网页中的html结构加载完成之后就会执行，有可能图片，视频，音频还没有加载完毕！
+ 02. window.onload在页面中只能书写一次
+     $(document).ready()可以书写N个
+ 03.  window.onload没有简写方式
+     $(document).ready() 简写方式是  $(function(){ })
+
+
+
+
+
+-->
