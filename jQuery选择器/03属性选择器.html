@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style type="text/css">
+        #box {
+            background-color: #FFF;
+            border: 2px solid #000;
+            padding: 5px;
+        }
+
+        h2 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h2 class="odds" title="cartoonlist">动画列表</h2>
+    <ul>
+        <li class="odds" title="kn_jp">名侦探柯南</li>
+        <li class="evens" title="hy_jp">火影忍者</li>
+        <li class="odds" title="ss_jp">死神</li>
+        <li class="evens" title="yj_jp">妖精的尾巴</li>
+        <li class="odds" title="yh_jp">银魂</li>
+        <li class="evens" title="hm_da">黑猫警长</li>
+        <li class="odds" title="xl_ds">仙履奇缘</li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("h2").click(function() {
+            //改变含有title属性的<h2>元素的背景颜色
+            //$("h2[title]").css({"background":"red"});
+            //改变class属性的值为odds的元素的背景颜色
+           // $("[class='odds']").css({"background":"red"});
+            //改变id属性的值不为box的元素的背景颜色
+            //$("[id!='box']").css({"background":"red"});
+            //改变title属性的值中以h开头的元素的背景颜色
+            //$("[title^='h']").css({"background":"red"});
+            //改变title属性的值中以jp结尾的元素的背景颜色
+            //$("[title$='jp']").css({"background":"red"});
+            //改变title属性的值中含有s的元素的背景颜色
+            //$("[title*='s']").css({"background":"red"});
+            //改变包含class属性，且title属性的值中含有y的<li>元素的背景颜色
+            $("li[class][title*='y']").css({"background":"red"});
+        });
+    });
+</script>
+</body>
+</html>
