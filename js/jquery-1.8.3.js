@@ -13,7 +13,7 @@
  */
 (function( window, undefined ) {
 var
-	// A central reference to the root jQuery(document)
+	// A central reference to the root 初识jQuery(document)
 	rootjQuery,
 
 	// The deferred used on DOM ready
@@ -24,7 +24,7 @@ var
 	location = window.location,
 	navigator = window.navigator,
 
-	// Map over jQuery in case of overwrite
+	// Map over 初识jQuery in case of overwrite
 	_jQuery = window.jQuery,
 
 	// Map over the $ in case of overwrite
@@ -38,9 +38,9 @@ var
 	core_hasOwn = Object.prototype.hasOwnProperty,
 	core_trim = String.prototype.trim,
 
-	// Define a local copy of jQuery
+	// Define a local copy of 初识jQuery
 	jQuery = function( selector, context ) {
-		// The jQuery object is actually just the init constructor 'enhanced'
+		// The 初识jQuery object is actually just the init constructor 'enhanced'
 		return new jQuery.fn.init( selector, context, rootjQuery );
 	},
 
@@ -71,7 +71,7 @@ var
 	rmsPrefix = /^-ms-/,
 	rdashAlpha = /-([\da-z])/gi,
 
-	// Used by jQuery.camelCase as callback to replace()
+	// Used by 初识jQuery.camelCase as callback to replace()
 	fcamelCase = function( all, letter ) {
 		return ( letter + "" ).toUpperCase();
 	},
@@ -148,7 +148,7 @@ jQuery.fn = jQuery.prototype = {
 							return rootjQuery.find( selector );
 						}
 
-						// Otherwise, we inject the element directly into the jQuery object
+						// Otherwise, we inject the element directly into the 初识jQuery object
 						this.length = 1;
 						this[0] = elem;
 					}
@@ -185,10 +185,10 @@ jQuery.fn = jQuery.prototype = {
 	// Start with an empty selector
 	selector: "",
 
-	// The current version of jQuery being used
+	// The current version of 初识jQuery being used
 	jquery: "1.8.3",
 
-	// The default length of a jQuery object is 0
+	// The default length of a 初识jQuery object is 0
 	length: 0,
 
 	// The number of elements contained in the matched element set
@@ -216,7 +216,7 @@ jQuery.fn = jQuery.prototype = {
 	// (returning the new matched element set)
 	pushStack: function( elems, name, selector ) {
 
-		// Build a new jQuery matched element set
+		// Build a new 初识jQuery matched element set
 		var ret = jQuery.merge( this.constructor(), elems );
 
 		// Add the old object onto the stack (as a reference)
@@ -279,13 +279,13 @@ jQuery.fn = jQuery.prototype = {
 	},
 
 	// For internal use only.
-	// Behaves like an Array's method, not like a jQuery method.
+	// Behaves like an Array's method, not like a 初识jQuery method.
 	push: core_push,
 	sort: [].sort,
 	splice: [].splice
 };
 
-// Give the init function the jQuery prototype for later instantiation
+// Give the init function the 初识jQuery prototype for later instantiation
 jQuery.fn.init.prototype = jQuery.fn;
 
 jQuery.extend = jQuery.fn.extend = function() {
@@ -308,7 +308,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		target = {};
 	}
 
-	// extend jQuery itself if only one argument is passed
+	// extend 初识jQuery itself if only one argument is passed
 	if ( length === i ) {
 		target = this;
 		--i;
@@ -559,7 +559,7 @@ jQuery.extend({
 		if ( data && core_rnotwhite.test( data ) ) {
 			// We use execScript on Internet Explorer
 			// We use an anonymous function so that context is window
-			// rather than jQuery in Firefox
+			// rather than 初识jQuery in Firefox
 			( window.execScript || function( data ) {
 				window[ "eval" ].call( window, data );
 			} )( data );
@@ -902,7 +902,7 @@ jQuery.each("Boolean Number String Function Array Date RegExp Object".split(" ")
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 });
 
-// All jQuery objects should point back to these
+// All 初识jQuery objects should point back to these
 rootjQuery = jQuery(document);
 // String to Object options format cache
 var optionsCache = {};
@@ -1320,7 +1320,7 @@ jQuery.support = (function() {
 		// Where outerHTML is undefined, this still works
 		html5Clone: document.createElement("nav").cloneNode( true ).outerHTML !== "<:nav></:nav>",
 
-		// jQuery.support.boxModel DEPRECATED in 1.8 since we don't support Quirks Mode
+		// 初识jQuery.support.boxModel DEPRECATED in 1.8 since we don't support Quirks Mode
 		boxModel: ( document.compatMode === "CSS1Compat" ),
 
 		// Will be defined later
@@ -1517,7 +1517,7 @@ jQuery.extend({
 	// Remove at next major release (1.9/2.0)
 	uuid: 0,
 
-	// Unique for each copy of jQuery on the page
+	// Unique for each copy of 初识jQuery on the page
 	// Non-digits removed to match rinlinejQuery
 	expando: "jQuery" + ( jQuery.fn.jquery + Math.random() ).replace( /\D/g, "" ),
 
@@ -1548,7 +1548,7 @@ jQuery.extend({
 			// can't GC object references properly across the DOM-JS boundary
 			isNode = elem.nodeType,
 
-			// Only DOM nodes need the global jQuery cache; JS object data is
+			// Only DOM nodes need the global 初识jQuery cache; JS object data is
 			// attached directly to the object so GC can occur automatically
 			cache = isNode ? jQuery.cache : elem,
 
@@ -1575,14 +1575,14 @@ jQuery.extend({
 		if ( !cache[ id ] ) {
 			cache[ id ] = {};
 
-			// Avoids exposing jQuery metadata on plain JS objects when the object
+			// Avoids exposing 初识jQuery metadata on plain JS objects when the object
 			// is serialized using JSON.stringify
 			if ( !isNode ) {
 				cache[ id ].toJSON = jQuery.noop;
 			}
 		}
 
-		// An object can be passed to jQuery.data instead of a key/value pair; this gets
+		// An object can be passed to 初识jQuery.data instead of a key/value pair; this gets
 		// shallow copied over onto the existing cache
 		if ( typeof name === "object" || typeof name === "function" ) {
 			if ( pvt ) {
@@ -1594,7 +1594,7 @@ jQuery.extend({
 
 		thisCache = cache[ id ];
 
-		// jQuery data() is stored in a separate object inside the object's internal data
+		// 初识jQuery data() is stored in a separate object inside the object's internal data
 		// cache in order to avoid key collisions between internal data and user-defined
 		// data.
 		if ( !pvt ) {
@@ -1638,7 +1638,7 @@ jQuery.extend({
 
 			isNode = elem.nodeType,
 
-			// See jQuery.data for more information
+			// See 初识jQuery.data for more information
 			cache = isNode ? jQuery.cache : elem,
 			id = isNode ? elem[ jQuery.expando ] : jQuery.expando;
 
@@ -1684,7 +1684,7 @@ jQuery.extend({
 			}
 		}
 
-		// See jQuery.data for more information
+		// See 初识jQuery.data for more information
 		if ( !pvt ) {
 			delete cache[ id ].data;
 
@@ -2670,7 +2670,7 @@ jQuery.event = {
 		eventHandle = elemData.handle;
 		if ( !eventHandle ) {
 			elemData.handle = eventHandle = function( e ) {
-				// Discard the second event of a jQuery.event.trigger() and
+				// Discard the second event of a 初识jQuery.event.trigger() and
 				// when an event is called after a page has unloaded
 				return typeof jQuery !== "undefined" && (!e || jQuery.event.triggered !== e.type) ?
 					jQuery.event.dispatch.apply( eventHandle.elem, arguments ) :
@@ -2681,7 +2681,7 @@ jQuery.event = {
 		}
 
 		// Handle multiple events separated by a space
-		// jQuery(...).bind("mouseover mouseout", fn);
+		// 初识jQuery(...).bind("mouseover mouseout", fn);
 		types = jQuery.trim( hoverHack(types) ).split( " " );
 		for ( t = 0; t < types.length; t++ ) {
 
@@ -2863,13 +2863,13 @@ jQuery.event = {
 		}
 
 		if ( (!elem || jQuery.event.customEvent[ type ]) && !jQuery.event.global[ type ] ) {
-			// No jQuery handlers for this event type, and it can't have inline handlers
+			// No 初识jQuery handlers for this event type, and it can't have inline handlers
 			return;
 		}
 
 		// Caller can pass in an Event, Object, or just an event type string
 		event = typeof event === "object" ?
-			// jQuery.Event object
+			// 初识jQuery.Event object
 			event[ jQuery.expando ] ? event :
 			// Object literal
 			new jQuery.Event( type, event ) :
@@ -2940,7 +2940,7 @@ jQuery.event = {
 			if ( handle ) {
 				handle.apply( cur, data );
 			}
-			// Note that this is a bare JS function and not a jQuery handler
+			// Note that this is a bare JS function and not a 初识jQuery handler
 			handle = ontype && cur[ ontype ];
 			if ( handle && jQuery.acceptData( cur ) && handle.apply && handle.apply( cur, data ) === false ) {
 				event.preventDefault();
@@ -2984,7 +2984,7 @@ jQuery.event = {
 
 	dispatch: function( event ) {
 
-		// Make a writable jQuery.Event from the native event object
+		// Make a writable 初识jQuery.Event from the native event object
 		event = jQuery.event.fix( event || window.event );
 
 		var i, j, cur, ret, selMatch, matched, matches, handleObj, sel, related,
@@ -2995,7 +2995,7 @@ jQuery.event = {
 			special = jQuery.event.special[ event.type ] || {},
 			handlerQueue = [];
 
-		// Use the fix-ed jQuery.Event rather than the (read-only) native event
+		// Use the fix-ed 初识jQuery.Event rather than the (read-only) native event
 		args[0] = event;
 		event.delegateTarget = this;
 
@@ -3278,7 +3278,7 @@ function returnTrue() {
 	return true;
 }
 
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+// 初识jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
 // http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 jQuery.Event.prototype = {
 	preventDefault: function() {
@@ -3541,7 +3541,7 @@ jQuery.fn.extend({
 	off: function( types, selector, fn ) {
 		var handleObj, type;
 		if ( types && types.preventDefault && types.handleObj ) {
-			// ( event )  dispatched jQuery.Event
+			// ( event )  dispatched 初识jQuery.Event
 			handleObj = types.handleObj;
 			jQuery( types.delegateTarget ).off(
 				handleObj.namespace ? handleObj.origType + "." + handleObj.namespace : handleObj.origType,
@@ -3662,7 +3662,7 @@ jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblcl
 });
 /*!
  * Sizzle CSS Selector Engine
- * Copyright 2012 jQuery Foundation and other contributors
+ * Copyright 2012 初识jQuery Foundation and other contributors
  * Released under the MIT license
  * http://sizzlejs.com/
  */
@@ -5475,7 +5475,7 @@ jQuery.fn.extend({
 
 		// Locate the position of the desired element
 		return jQuery.inArray(
-			// If it receives a jQuery object, the first element is used
+			// If it receives a 初识jQuery object, the first element is used
 			elem.jquery ? elem[0] : elem, this );
 	},
 
@@ -6136,7 +6136,7 @@ jQuery.buildFragment = function( args, context, scripts ) {
 	var fragment, cacheable, cachehit,
 		first = args[ 0 ];
 
-	// Set context from what may come in as undefined or a jQuery collection or a node
+	// Set context from what may come in as undefined or a 初识jQuery collection or a node
 	// Updated to fix #12266 where accessing context[0] could throw an exception in IE9/10 &
 	// also doubles as fix for #8950 where plain objects caused createDocumentFragment exception
 	context = context || document;
@@ -6405,7 +6405,7 @@ jQuery.extend({
 					// Append to fragment and handle embedded scripts
 					fragment.appendChild( elem );
 					if ( typeof elem.getElementsByTagName !== "undefined" ) {
-						// handleScript alters the DOM, so use jQuery.merge to ensure snapshot iteration
+						// handleScript alters the DOM, so use 初识jQuery.merge to ensure snapshot iteration
 						jsTags = jQuery.grep( jQuery.merge( [], elem.getElementsByTagName("script") ), handleScript );
 
 						// Splice the scripts into ret after their former ancestor and advance our index beyond them
@@ -6440,14 +6440,14 @@ jQuery.extend({
 							if ( special[ type ] ) {
 								jQuery.event.remove( elem, type );
 
-							// This is a shortcut to avoid jQuery.event.remove's overhead
+							// This is a shortcut to avoid 初识jQuery.event.remove's overhead
 							} else {
 								jQuery.removeEvent( elem, type, data.handle );
 							}
 						}
 					}
 
-					// Remove cache only if it was not already removed by jQuery.event.remove
+					// Remove cache only if it was not already removed by 初识jQuery.event.remove
 					if ( cache[ id ] ) {
 
 						delete cache[ id ];
@@ -6477,9 +6477,9 @@ jQuery.extend({
 
 var matched, browser;
 
-// Use of jQuery.browser is frowned upon.
-// More details: http://api.jquery.com/jQuery.browser
-// jQuery.uaMatch maintained for back-compat
+// Use of 初识jQuery.browser is frowned upon.
+// More details: http://api.jquery.com/初识jQuery.browser
+// 初识jQuery.uaMatch maintained for back-compat
 jQuery.uaMatch = function( ua ) {
 	ua = ua.toLowerCase();
 
@@ -6916,7 +6916,7 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox ) {
 	for ( ; i < 4; i += 2 ) {
 		// both box models exclude margin, so add it if we want it
 		if ( extra === "margin" ) {
-			// we use jQuery.css instead of curCSS here
+			// we use 初识jQuery.css instead of curCSS here
 			// because of the reliableMarginRight CSS hook!
 			val += jQuery.css( elem, extra + cssExpand[ i ], true );
 		}
@@ -7219,7 +7219,7 @@ jQuery.param = function( a, traditional ) {
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
 		};
 
-	// Set traditional to true for jQuery <= 1.3.2 behavior.
+	// Set traditional to true for 初识jQuery <= 1.3.2 behavior.
 	if ( traditional === undefined ) {
 		traditional = jQuery.ajaxSettings && jQuery.ajaxSettings.traditional;
 	}
@@ -7331,7 +7331,7 @@ try {
 // Segment location into parts
 ajaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];
 
-// Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
+// Base "constructor" for 初识jQuery.ajaxPrefilter and 初识jQuery.ajaxTransport
 function addToPrefiltersOrTransports( structure ) {
 
 	// dataTypeExpression is optional and defaults to "*"
@@ -7646,7 +7646,7 @@ jQuery.extend({
 			callbackContext = s.context || s,
 			// Context for global events
 			// It's the callbackContext if one was provided in the options
-			// and if it's a DOM node or a jQuery collection
+			// and if it's a DOM node or a 初识jQuery collection
 			globalEventContext = callbackContext !== s &&
 				( callbackContext.nodeType || callbackContext instanceof jQuery ) ?
 						jQuery( callbackContext ) : jQuery.event,
@@ -8430,7 +8430,7 @@ if ( jQuery.support.ajax ) {
 
 					// Do send the request
 					// This may raise an exception which is actually
-					// handled in jQuery.ajax (so no try/catch here)
+					// handled in 初识jQuery.ajax (so no try/catch here)
 					xhr.send( ( s.hasContent && s.data ) || null );
 
 					// Listener
@@ -9450,21 +9450,21 @@ jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 		};
 	});
 });
-// Expose jQuery to the global object
+// Expose 初识jQuery to the global object
 window.jQuery = window.$ = jQuery;
 
-// Expose jQuery as an AMD module, but only for AMD loaders that
-// understand the issues with loading multiple versions of jQuery
+// Expose 初识jQuery as an AMD module, but only for AMD loaders that
+// understand the issues with loading multiple versions of 初识jQuery
 // in a page that all might call define(). The loader will indicate
-// they have special allowances for multiple jQuery versions by
-// specifying define.amd.jQuery = true. Register as a named module,
-// since jQuery can be concatenated with other files that may use define,
+// they have special allowances for multiple 初识jQuery versions by
+// specifying define.amd.初识jQuery = true. Register as a named module,
+// since 初识jQuery can be concatenated with other files that may use define,
 // but not use a proper concatenation script that understands anonymous
 // AMD modules. A named AMD is safest and most robust way to register.
 // Lowercase jquery is used because AMD module names are derived from
-// file names, and jQuery is normally delivered in a lowercase file name.
+// file names, and 初识jQuery is normally delivered in a lowercase file name.
 // Do this after creating the global so that if an AMD module wants to call
-// noConflict to hide this version of jQuery, it will work.
+// noConflict to hide this version of 初识jQuery, it will work.
 if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 	define( "jquery", [], function () { return jQuery; } );
 }

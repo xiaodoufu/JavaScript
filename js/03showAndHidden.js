@@ -2,7 +2,7 @@
  * Created by 小豆腐 on 2017/9/11.
  */
 
-/*jQuery(function(){
+/*初识jQuery(function(){
     当我们的鼠标移动到li上面，div中的图片显示
     $("li").mouseover(function(){
         //$(this).children("div").css({"display":"block"});

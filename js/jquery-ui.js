@@ -159,7 +159,7 @@ $.extend( $.expr[ ":" ], {
 				return !!$.data( elem, dataName );
 			};
 		}) :
-		// support: jQuery <1.8
+		// support: 初识jQuery <1.8
 		function( elem, i, match ) {
 			return !!$.data( elem, match[ 3 ] );
 		},
@@ -200,7 +200,7 @@ $(function() {
 	body.removeChild( div ).style.display = "none";
 });
 
-// support: jQuery <1.8
+// support: 初识jQuery <1.8
 if ( !$( "<a>" ).outerWidth( 1 ).jquery ) {
 	$.each( [ "Width", "Height" ], function( i, name ) {
 		var side = name === "Width" ? [ "Left", "Right" ] : [ "Top", "Bottom" ],
@@ -247,7 +247,7 @@ if ( !$( "<a>" ).outerWidth( 1 ).jquery ) {
 	});
 }
 
-// support: jQuery 1.6.1, 1.6.2 (http://bugs.jquery.com/ticket/9413)
+// support: 初识jQuery 1.6.1, 1.6.2 (http://bugs.jquery.com/ticket/9413)
 if ( $( "<a>" ).data( "a-b", "a" ).removeData( "a-b" ).data( "a-b" ) ) {
 	$.fn.removeData = (function( removeData ) {
 		return function( key ) {
@@ -3538,7 +3538,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 		}
 
 		if (this.placeholder) {
-			//$(this.placeholder[0]).remove(); would have been the jQuery way - unfortunately, it unbinds ALL events from the original node!
+			//$(this.placeholder[0]).remove(); would have been the 初识jQuery way - unfortunately, it unbinds ALL events from the original node!
 			if(this.placeholder[0].parentNode) this.placeholder[0].parentNode.removeChild(this.placeholder[0]);
 			if(this.options.helper != "original" && this.helper && this.helper[0].parentNode) this.helper.remove();
 
@@ -4205,7 +4205,7 @@ $.widget("ui.sortable", $.ui.mouse, {
 
 		if(!noPropagation) this._trigger("beforeStop", event, this._uiHash());
 
-		//$(this.placeholder[0]).remove(); would have been the jQuery way - unfortunately, it unbinds ALL events from the original node!
+		//$(this.placeholder[0]).remove(); would have been the 初识jQuery way - unfortunately, it unbinds ALL events from the original node!
 		this.placeholder[0].parentNode.removeChild(this.placeholder[0]);
 
 		if(this.helper[0] != this.currentItem[0]) this.helper.remove(); this.helper = null;
@@ -4254,10 +4254,10 @@ $.effects = {
 };
 
 /*!
- * jQuery Color Animations v2.0.0
+ * 初识jQuery Color Animations v2.0.0
  * http://jquery.com/
  *
- * Copyright 2012 jQuery Foundation and other contributors
+ * Copyright 2012 初识jQuery Foundation and other contributors
  * Released under the MIT license.
  * http://jquery.org/license
  *
@@ -4323,7 +4323,7 @@ $.effects = {
 			}
 		}],
 
-	// jQuery.Color( )
+	// 初识jQuery.Color( )
 	color = jQuery.Color = function( color, green, blue, alpha ) {
 		return new jQuery.Color.fn.parse( color, green, blue, alpha );
 	},
@@ -4380,7 +4380,7 @@ $.effects = {
 	// element for support tests
 	supportElem = jQuery( "<p>" )[ 0 ],
 
-	// colors = jQuery.Color.names
+	// colors = 初识jQuery.Color.names
 	colors,
 
 	// local aliases of functions called often
@@ -5052,7 +5052,7 @@ $.effects.animateClass = function( value, duration, easing, callback ) {
 				});
 			});
 
-			// this is guarnteed to be there if you use jQuery.speed()
+			// this is guarnteed to be there if you use 初识jQuery.speed()
 			// it also handles dequeuing the next anim...
 			o.complete.call( animated[ 0 ] );
 		});
@@ -5128,9 +5128,9 @@ $.extend( $.effects, {
 		for( i=0; i < set.length; i++ ) {
 			if ( set[ i ] !== null ) {
 				val = element.data( dataSpace + set[ i ] );
-				// support: jQuery 1.6.2
+				// support: 初识jQuery 1.6.2
 				// http://bugs.jquery.com/ticket/9917
-				// jQuery 1.6.2 incorrectly returns undefined for any falsy value.
+				// 初识jQuery 1.6.2 incorrectly returns undefined for any falsy value.
 				// We can't differentiate between "" and 0 here, so we just assume
 				// empty string since it's likely to be a more common value...
 				if ( val === undefined ) {
@@ -5216,7 +5216,7 @@ $.extend( $.effects, {
 			$( active ).focus();
 		}
 
-		wrapper = element.parent(); //Hotfix for jQuery 1.4 since some change in wrap() seems to actually lose the reference to the wrapped element
+		wrapper = element.parent(); //Hotfix for 初识jQuery 1.4 since some change in wrap() seems to actually lose the reference to the wrapped element
 
 		// transfer positioning properties to the wrapper
 		if ( element.css( "position" ) === "static" ) {
@@ -5427,7 +5427,7 @@ $.fn.extend({
 		}
 	},
 
-	// jQuery core overloads toggle and creates _toggle
+	// 初识jQuery core overloads toggle and creates _toggle
 	__toggle: $.fn.toggle,
 	toggle: function( speed ) {
 		if ( standardSpeed( speed ) || typeof speed === "boolean" || $.isFunction( speed ) ) {
@@ -7271,7 +7271,7 @@ function Datepicker() {
 	this._defaults = { // Global defaults for all the date picker instances
 		showOn: 'focus', // 'focus' for popup on focus,
 			// 'button' for trigger button, or 'both' for either
-		showAnim: 'fadeIn', // Name of jQuery animation for popup
+		showAnim: 'fadeIn', // Name of 初识jQuery animation for popup
 		showOptions: {}, // Options for enhanced animations
 		defaultDate: null, // Used when field is blank: actual date,
 			// +/-number for offset from today, null for today
@@ -7348,7 +7348,7 @@ $.extend(Datepicker.prototype, {
 		return this;
 	},
 
-	/* Attach the date picker to a jQuery selection.
+	/* Attach the date picker to a 初识jQuery selection.
 	   @param  target    element - the target input field or division or span
 	   @param  settings  object - the new settings to use for this date picker instance (anonymous) */
 	_attachDatepicker: function(target, settings) {
@@ -7382,7 +7382,7 @@ $.extend(Datepicker.prototype, {
 
 	/* Create a new instance object. */
 	_newInst: function(target, inline) {
-		var id = target[0].id.replace(/([^A-Za-z0-9_-])/g, '\\\\$1'); // escape jQuery meta chars
+		var id = target[0].id.replace(/([^A-Za-z0-9_-])/g, '\\\\$1'); // escape 初识jQuery meta chars
 		return {id: id, input: target, // associated target
 			selectedDay: 0, selectedMonth: 0, selectedYear: 0, // current selection
 			drawMonth: 0, drawYear: 0, // month being drawn
@@ -7573,7 +7573,7 @@ $.extend(Datepicker.prototype, {
 			$target.removeClass(this.markerClassName).empty();
 	},
 
-	/* Enable the date picker to a jQuery selection.
+	/* Enable the date picker to a 初识jQuery selection.
 	   @param  target    element - the target input field or division or span */
 	_enableDatepicker: function(target) {
 		var $target = $(target);
@@ -7598,7 +7598,7 @@ $.extend(Datepicker.prototype, {
 			function(value) { return (value == target ? null : value); }); // delete entry
 	},
 
-	/* Disable the date picker to a jQuery selection.
+	/* Disable the date picker to a 初识jQuery selection.
 	   @param  target    element - the target input field or division or span */
 	_disableDatepicker: function(target) {
 		var $target = $(target);
@@ -7624,7 +7624,7 @@ $.extend(Datepicker.prototype, {
 		this._disabledInputs[this._disabledInputs.length] = target;
 	},
 
-	/* Is the first field in a jQuery collection disabled as a datepicker?
+	/* Is the first field in a 初识jQuery collection disabled as a datepicker?
 	   @param  target    element - the target input field or division or span
 	   @return boolean - true if disabled, false if enabled */
 	_isDisabledDatepicker: function(target) {
@@ -7641,7 +7641,7 @@ $.extend(Datepicker.prototype, {
 	/* Retrieve the instance data for the target control.
 	   @param  target  element - the target input field or division or span
 	   @return  object - the associated instance data
-	   @throws  error if a jQuery problem getting data */
+	   @throws  error if a 初识jQuery problem getting data */
 	_getInst: function(target) {
 		try {
 			return $.data(target, PROP_NAME);
@@ -7706,7 +7706,7 @@ $.extend(Datepicker.prototype, {
 		}
 	},
 
-	/* Set the dates for a jQuery selection.
+	/* Set the dates for a 初识jQuery selection.
 	   @param  target   element - the target input field or division or span
 	   @param  date     Date - the new date */
 	_setDateDatepicker: function(target, date) {
@@ -7718,7 +7718,7 @@ $.extend(Datepicker.prototype, {
 		}
 	},
 
-	/* Get the date(s) for the first entry in a jQuery selection.
+	/* Get the date(s) for the first entry in a 初识jQuery selection.
 	   @param  target     element - the target input field or division or span
 	   @param  noDefault  boolean - true if no default date is to be used
 	   @return Date - the current date */
@@ -7956,7 +7956,7 @@ $.extend(Datepicker.prototype, {
 	},
 
 	/* Retrieve the size of left and top borders for an element.
-	   @param  elem  (jQuery object) the element of interest
+	   @param  elem  (初识jQuery object) the element of interest
 	   @return  (number[2]) the left and top borders */
 	_getBorders: function(elem) {
 		var convert = function(value) {
@@ -9001,7 +9001,7 @@ function bindHover(dpDiv) {
 		});
 }
 
-/* jQuery extend now ignores nulls! */
+/* 初识jQuery extend now ignores nulls! */
 function extendRemove(target, props) {
 	$.extend(target, props);
 	for (var name in props)
@@ -9013,7 +9013,7 @@ function extendRemove(target, props) {
 /* Invoke the datepicker functionality.
    @param  options  string - a command, optionally followed by additional parameters or
 	                Object - settings for attaching new datepicker functionality
-   @return  jQuery object */
+   @return  初识jQuery object */
 $.fn.datepicker = function(options){
 
 	/* Verify an empty collection wasn't passed - Fixes #6976 */
@@ -9531,7 +9531,7 @@ $.widget("ui.dialog", {
 			isVisible;
 
 		if ( position ) {
-			// deep extending converts arrays to objects in jQuery <= 1.3.2 :-(
+			// deep extending converts arrays to objects in 初识jQuery <= 1.3.2 :-(
 	//		if (typeof position == 'string' || $.isArray(position)) {
 	//			myAt = $.isArray(position) ? position : position.split(' ');
 
@@ -11917,7 +11917,7 @@ $.ui.position = {
 		body = document.getElementsByTagName( "body" )[ 0 ],
 		div = document.createElement( "div" );
 
-	//Create a "fake body" for testing based on method used in jQuery.support
+	//Create a "fake body" for testing based on method used in 初识jQuery.support
 	testElement = document.createElement( body ? "div" : "body" );
 	testElementStyle = {
 		visibility: "hidden",
@@ -13735,7 +13735,7 @@ $.widget( "ui.tabs", {
 		}
 
 		if ( !toHide.length && !toShow.length ) {
-			$.error( "jQuery UI Tabs: Mismatching fragment identifier." );
+			$.error( "初识jQuery UI Tabs: Mismatching fragment identifier." );
 		}
 
 		if ( toShow.length ) {
@@ -13959,8 +13959,8 @@ $.widget( "ui.tabs", {
 
 		this.xhr = $.ajax( this._ajaxSettings( anchor, event, eventData ) );
 
-		// support: jQuery <1.8
-		// jQuery <1.8 returns false if the request is canceled in beforeSend,
+		// support: 初识jQuery <1.8
+		// 初识jQuery <1.8 returns false if the request is canceled in beforeSend,
 		// but as of 1.8, $.ajax() always returns a jqXHR object.
 		if ( this.xhr && this.xhr.statusText !== "canceled" ) {
 			tab.addClass( "ui-tabs-loading" );
@@ -13968,7 +13968,7 @@ $.widget( "ui.tabs", {
 
 			this.xhr
 				.success(function( response ) {
-					// support: jQuery <1.8
+					// support: 初识jQuery <1.8
 					// http://bugs.jquery.com/ticket/11778
 					setTimeout(function() {
 						panel.html( response );
@@ -13976,7 +13976,7 @@ $.widget( "ui.tabs", {
 					}, 1 );
 				})
 				.complete(function( jqXHR, status ) {
-					// support: jQuery <1.8
+					// support: 初识jQuery <1.8
 					// http://bugs.jquery.com/ticket/11778
 					setTimeout(function() {
 						if ( status === "abort" ) {
@@ -14705,7 +14705,7 @@ $.widget( "ui.tooltip", {
 			// IE may instantly serve a cached response for ajax requests
 			// delay this call to _open so the other call to _open runs first
 			that._delay(function() {
-				// jQuery creates a special event for focusin when it doesn't
+				// 初识jQuery creates a special event for focusin when it doesn't
 				// exist natively. To improve performance, the native event
 				// object is reused and the type is changed. Therefore, we can't
 				// rely on the type being correct after the event finished
