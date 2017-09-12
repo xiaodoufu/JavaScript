@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本过滤选择器</title>
+</head>
+<body>
+获取焦点：<input type="text">
+<h1>h1网络小说</h1>
+<h2>h2网络小说</h2>
+<h3>h3网络小说</h3>
+<h4>h4网络小说</h4>
+<ul>
+    <li>王妃不好当</li>
+    <li>致命交易</li>
+    <li class="three">迦兰寺</li>
+    <li>逆天之宠</li>
+    <li>交错时光的爱恋</li>
+    <li>张震鬼故事</li>
+    <li>第一次亲密接触</li>
+</ul>
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("h2").click(function(){
+            //改变第1个<li>元素的背景颜色
+            //$("li:first").css({"color":"red"});
+            //改变最后一个<li>元素的背景颜色
+            //$("li:last").css({"color":"red"});
+            //改变class不为three的<li>元素的背景颜色
+            //$("li:not(.three)").css({"color":"red"});
+            //改变索引值为偶数的<li>元素的背景颜色
+            //$("li:even").css({"color":"red"});
+            //改变索引值为奇数的<li>元素的背景颜色
+             //$("li:odd").css({"color":"red"});
+            //改变索引值等于1的<li>元素的背景颜色
+            //$("li:eq(1)").css({"color":"red"});
+            //改变索引值大于1的<li>元素的背景颜色
+           // $("li:gt(1)").css({"color":"red"});
+            //改变索引值小于1的<li>元素的背景颜色
+            //$("li:lt(1)").css({"color":"red"});
+            //改变所有标题元素，例如<h1>,<h2>,<h3>……这些元素的背景颜色
+            //$(":header").css({"color":"red"});
+        });
+         //改变当前获取焦点的元素的背景颜色
+
+        $("input").click(function(){
+            //让获取焦点的元素改变背景色
+            alert("是否获取焦点："+$(this).is(":focus"));
+            $(":focus").css({"background":"red"});
+        })
+    });
+</script>
+</body>
+</html>
