@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>基本选择器</title>
+    <style type="text/css">
+        #box {
+            background-color: #FFF;
+            border: 2px solid #000;
+            padding: 5px;
+        }
+    </style>
+
+    <script  type="text/javascript"  src="../js/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#btn1").click(function() {//触发不同的效果按钮点击事件
+                //标签选择器，获取<h3>元素并为其添加背景颜色
+                //$("h3").css({"background":"red"});
+                //类选择器，获取并设置所有class为title的元素的背景颜色
+                //$(".title").css({"background":"red"});
+                //ID选择器，获取并设置id为box的元素的背景颜色
+                 //$("#box").css({"background":"red"});
+                //并集选择器，获取并设置所有<h2>、<dt>、class为title的元素的背景颜色
+                //$("h2,dt,.title").css({"background":"red"});
+                //交集选择器，获取并设置所有class为title的<h2>元素的背景颜色
+                //$("h2.title").css({"background":"red"});
+                //全局选择器，改变所有元素的字体颜色
+                $("*").css({"background":"red"});
+            })
+        });
+    </script>
+<body>
+<input type="button" id="btn1" value="显示效果" />
+<div id="box">
+    id为box的div
+    <h2 class="title">class为title的h2</h2>
+    <h3 class="title">class为title的h3</h3>
+    <h3>热门排行</h3>
+    <dl>
+        <dt>
+            <img src="images/case_1.gif" width="93" height="99" alt="斗地主" />
+        </dt>
+        <dd class="title">斗地主</dd>
+        <dd>休闲游戏</dd>
+        <dd>QQ斗地主是国内同时在线人数最多的棋牌游戏......</dd>
+    </dl>
+</div>
+</body>
+</html>
