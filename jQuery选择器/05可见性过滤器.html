@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>可见性过滤器</title>
+</head>
+<body>
+<button id="show">show</button>
+<button id="hide">hide</button>
+<div>显示1</div>
+<div>显示2</div>
+<div style="display:none">显示3</div>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+     //点击show按钮触发的事件
+        $("#show").click(function(){
+            $(":hidden").show();
+        });
+        //点击hide触发的事件
+        $("#hide").click(function(){
+            $("div:visible").hide();
+        });
+
+
+
+    });
+</script>
+
+</body>
+</html>
