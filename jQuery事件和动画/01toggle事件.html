@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>toggle事件</title>
+    <!--  toggle事件 ： 1.9之后的版本之后废除了该事件！
+    01.是一个循环事件！
+    02.显示和隐藏-->
+</head>
+<body>
+
+<input type="button"  id="hidebtn" value="toggle循环">
+<input type="button"  id="showbtn" value="toggle显示和隐藏">
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //设置按钮的toggle事件
+        $("input[type='button']").toggle(
+                function(){   //第1次触发的事件
+                    $("body").css("background","red");
+                },
+                function(){//第2次触发的事件
+                    $("body").css("background","pink");
+                },
+                function(){//第3次触发的事件
+                    $("body").css("background","yellowgreen");
+                }
+        );
+        //显示和隐藏
+        $("#showbtn").click(function(){
+            $("#hidebtn").toggle();
+        })
+
+    })
+
+
+</script>
+
+</body>
+</html>
