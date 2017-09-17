@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>animate动画事件</title>
+</head>
+<body>
+
+
+<button type="button" id="showAnimate">开始动画</button>
+<img src="../images/cat.jpg">
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+/*
+* animate(prop,speed,easing,callback)
+* prop:我们需要设置的css属性，可以是0-N个
+* speed:动画执行的速度
+* easing:速度曲线
+* callback: 指的是我们动画完成所有动作之后的回调函数 （function）
+* */
+    $(function(){
+        //点击按钮
+        $("#showAnimate").click(function(){
+           //图片发生变化
+            $("img").animate(  // start  animate
+                    {
+                        "height":200,
+                        "width":200,
+                        "marginRight":50
+                    },
+                    "slow",
+                    "swing",
+                    function(){
+                alert("动画已经完成！");
+            }); // end  animate
+        })
+    })
+
+</script>
+</body>
+</html>

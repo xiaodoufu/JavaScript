@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <button type="button" id="showImg">淡入</button>
+   <button type="button" id="hideImg">淡出</button>
+   <img src="../images/cat.jpg">
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function(){
+        /*其实就是对元素的透明度进行修改*/
+        $("#showImg").click(function(){  //淡入
+            $("img").fadeIn(3000);
+        })
+        $("#hideImg").click(function(){//淡出
+            $("img").fadeOut("slow");
+        })
+
+    })
+
+</script>
+</body>
+</html>
