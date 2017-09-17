@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>事件绑定on</title>
+</head>
+<body>
+  <button type="button" id="add">添加商品</button>
+
+  <button type="button" id="btnClose">解除绑定</button>
+
+  <ul>
+      <li>手机</li>
+      <li>充电器</li>
+      <li>耳机</li>
+  </ul>
+  <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+  <script type="text/javascript">
+
+      $(function(){
+          /*01.鼠标移入和移出li的事件! 这种方式  后面增加的节点没有事件
+          $("li").hover(function(){  //mouseover
+              $(this).css({"background":"red"});
+          },function(){//mouseout
+              $(this).css({"background":"pink"});
+          })*/
+
+          /*02.当我们点击按钮的时候 动态的增加li*/
+            $("#add").click(function(){
+                $("ul").append("<li>吹风机</li>");
+            })
+          /*针对于我们 新增的li 没有事件  解决方案！  绑定事件
+          $("ul").on("mouseover","li",function(){
+              $(this).css({"background":"red"});
+          });
+          $("ul").on("mouseout","li",function(){
+              $(this).css({"background":"pink"});
+          });*/
+          $("ul").on({  //同时绑定多个事件
+              mouseover:function(){
+              $(this).css({"background":"red"});
+              },
+              mouseout:function(){
+              $(this).css({"background":"pink"});
+          }},"li");
+
+          /*解除绑定事件*/
+          $("#btnClose").click(function(){
+              $("ul").off("mouseover");
+          })
+
+
+
+      })
+
+
+
+  </script>
+</body>
+</html>

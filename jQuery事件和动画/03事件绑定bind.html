@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>事件绑定bind</title>
+</head>
+<body>
+<button type="button" id="add">添加商品</button>
+
+<button type="button" id="btnClose">解除绑定</button>
+
+<ul>
+    <li>手机</li>
+    <li>充电器</li>
+    <li>耳机</li>
+</ul>
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    //增加节点
+    $("#add").click(function(){
+        $("ul").append("<li>吹风机</li>");
+    })
+
+/*事件bing  绑定*/
+    $("li").bind({
+        mouseover:function(){
+            $(this).css({"background":"red"});
+        },
+        mouseout:function(){
+            $(this).css({"background":"pink"});
+        }
+    })
+
+
+
+
+ </script>
+</body>
+</html>
