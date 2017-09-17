@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+</head>
+<body>
+
+<form action="#" method="get" id="myForm">
+       用户名：<input name="userName"  placeholder="请输入用户名">
+         密码：<input  type="password"   name="pwd"  placeholder="请输入密码">
+    <button type="submit">登录</button>
+</form>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+  /*点击回车键 触发表单的提交事件   key用户的按键*/
+   $(document).keypress(function(key){
+       if(key.keyCode==13){
+           //表单提交
+           $("#myForm").submit();
+       }
+   })
+
+</script>
+</body>
+</html>

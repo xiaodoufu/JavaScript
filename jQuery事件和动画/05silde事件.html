@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>silde事件</title>
+    <style type="text/css" >
+        ul{
+            list-style:none;
+            padding:5px;
+            width:210px;
+            border:1px solid red;
+        }
+        a{
+            text-decoration:none;
+            line-height: 30px;
+        }
+        .menu_style li{
+            border-bottom:1px solid #666;
+        }
+    </style>
+</head>
+<body>
+<div id="menu" class="menu_style">
+    <ul>
+        <li><a href="#">手机通讯、数码电器</a></li>
+        <li><a href="#">食品饮料、酒水、果蔬</a></li>
+        <li><a href="#">进口食品、进口牛奶</a></li>
+        <li><a href="#">美容化妆、个人护理</a></li>
+        <li><a href="#">母婴用品、个人护理</a></li>
+        <li><a href="#">厨卫清洁、纸、清洁剂</a></li>
+        <li id="menu_07" class="element_hide"><a href="#">家居家纺、锅具餐具</a></li>
+        <li id="menu_08" class="element_hide"><a href="#">生活电器、汽车生活</a></li>
+        <li id="menu_09" class="element_hide"><a href="#">电脑、外设、办公用品</a></li>
+        <li class="btn">
+            <input name="more_btn" type="button" value="展开或关闭菜单项" />
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+  /*让li下标大于5的 但是不包含最后一个  显示或者隐藏*/
+ $(function(){
+     $("input").toggle(
+             function(){
+                 //$("li:gt(5):not(:last)").slideUp(1000);  毫秒数
+                 $("li:gt(5):not(:last)").slideUp("fast");
+             },
+             function(){
+                 $("li:gt(5):not(:last)").slideDown("slow");
+             }
+     );
+
+
+ })
+
+</script>
+</body>
+</html>
