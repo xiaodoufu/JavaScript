@@ -21,8 +21,17 @@
         $("ul").append("<li>吹风机</li>");
     })
 
-/*事件bing  绑定*/
+/*事件bing  绑定     解除绑定  unbind*/
     $("li").bind({
+        mouseover:function(){
+            $(this).css({"background":"red"});
+        },
+        mouseout:function(){
+            $(this).css({"background":"pink"});
+        }
+    })
+/*事件live  绑定    解除绑定  die*/
+    $("li").live({
         mouseover:function(){
             $(this).css({"background":"red"});
         },
