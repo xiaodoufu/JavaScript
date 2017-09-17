@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>节点的操作</title>
+</head>
+<body>
+
+  <ul>
+  <li>大家辛苦了</li>
+  <li>不交作业了</li>
+  <li>就是不交</li>
+  <li>气死你</li>
+  <li>伤害了谁？</li>
+  </ul>
+
+<button type="button" id="addLi">新增子节点</button>
+<button type="button" id="addUl">新增同辈节点</button>
+<button type="button" id="updateLi">替换下标为2节点</button>
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+        $("#addLi").click(function(){
+            //创建一个节点li
+            var $newLi=$("<li>新增的作业</li>");
+            //把新增的节点放置到 ul的最后  $("ul").append($newLi);  $newLi.appendTo($("ul"));
+            //把新增的节点放置到 ul的最前面
+              $("ul").prepend($newLi);  //等同于 $newLi.prependTo($("ul"));
+        })
+
+        $("#addUl").click(function(){
+            //创建一个节点ul
+            var $newUl=$("<ul><li>新增1</li><li>新增2</li></ul>")
+            //把新增的ul放置在我们ul之后 $("ul").after($newUl); $newUl.insertAfter($("ul"));
+            //把新增的ul放置在我们ul之前 $("ul").before($newUl);
+            $newUl.insertBefore($("ul"));
+        })
+        /**
+         * 获取li下标值是2的元素  替换
+         *  $(节点1).replaceWith($(替换节点))
+         *  等同于
+         *  $(替换节点).replaceAll($(节点1))
+         */
+
+        $("#updateLi").click(function(){
+           //创建替换的节点
+            var  $updateLi=$("<li style='color: red'>我是替换节点</li>");
+            //获取下标是2的元素$("li:eq(2)").replaceWith($updateLi);
+            //替换所有元素
+            $("li:eq(0)").replaceAll($("li:eq(4)"));
+        })
+
+        //验证 clone
+        $("li:eq(2)").mouseover(function(){
+            $(this).css({"background":"red"});
+        })
+
+        //向ul中clone 节点3
+        $("li:eq(2)").clone().appendTo("ul");
+       // $("li:eq(2)").clone(true).appendTo("ul");  会绑定事件，样式
+
+
+
+    })
+
+
+
+</script>
+
+</body>
+</html>

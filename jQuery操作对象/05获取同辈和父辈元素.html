@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>获取同辈和父辈元素</title>
+</head>
+<body>
+body
+<div id="main">
+    main
+    <div id="first1">
+        first1
+        <div id="second1">
+            second1
+            <div id="third1">
+                third1
+            </div>
+        </div>
+    </div>
+    <div id="first2">
+        first2
+        <div id="second2">
+            second2
+        </div>
+    </div>
+    <div id="first3">
+        first3
+        <div id="second3">
+            second3
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+         //获取main的子元素个数
+        alert("main的子元素个数"+$("#main").children().length);
+
+     //设置first1之后的兄弟节点的样式
+      //  $("#first1").next().css({"color":"red"});
+     //设置first2之前的兄弟节点的样式
+        //$("#first2").prev().css({"color":"red"});
+      //所有同辈元素  之前和之后
+        //$("#first2").siblings().css({"color":"red"});
+
+        //设置first1的父级元素
+       // $("#first1").parent().parent().css({"color":"red"});
+        //设置third1的祖先元素
+        $("#third1").parents().css({"color":"pink"});
+    })
+
+ </script>
+</body>
+</html>
