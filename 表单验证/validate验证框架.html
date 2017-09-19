@@ -52,7 +52,8 @@
                     email:true
            },
                 phone:{
-                    required:true
+                    required:true,
+                    checkPhone:true  //自己书写的手机验证正则
                 },
                 context:{
                     required:true
@@ -79,7 +80,8 @@
                     email:"邮箱格式不正确"
                 },
                 phone:{
-                    required:"请输入手机号"
+                    required:"请输入手机号",
+                    checkPhone:"电话号码格式不正确"//自己书写的手机验证正则
                 },
                 context:{
                     required:"您没有同意协议"
@@ -89,8 +91,13 @@
             onfocusout:function(element){
                 $(element).valid();
             }
+    });  //  end   validate
 
-        });
+        //增加了手机验证正则
+        jQuery.validator.addMethod("checkPhone",function(value,element){
+            var tel = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/
+            return this.optional(element) || (tel.test(value));
+        },"电话号码格式不正确")
 
 
     })
