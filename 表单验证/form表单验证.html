@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>验证</title>
+</head>
+<body>
+
+
+<form  id="myForm" action="success.html" method="post">
+     用户名:<input name="userName" placeholder="请输入用户名">
+      <button type="button" onclick="doSubmit()">登录</button>
+</form>
+
+
+<!--
+  可以跳过验证：
+  F12
+   之后把type="button"  改成type="submit"
+
+-->
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+  function doSubmit(){
+      var  userName=$("[name='userName']").val();
+      if(userName==""){
+          alert("用户名不能为空");
+          return;
+      }
+      //表单提交
+      $("#myForm").submit();
+  }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>验证框架的使用</title>
+
+    <style type="text/css">
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="success.html" method="post" id="myForm">
+    用户名：<input name="userName">  <br/>
+    密码：<input name="password" type="password" id="pwd">  <br/>
+    确认密码：<input name="repPassword"type="password" >  <br/>
+    邮箱：<input name="email">  <br/>
+    手机号：<input name="phone">  <br/>
+    性别：<input name="sex"  type="radio" value="男" checked>男
+        <input name="sex"  type="radio" value="女">女<br/>
+    是否同意协议<input type="checkbox" name="context"><br/>
+   <button type="submit">注册</button>
+</form>
+
+
+<!--引入需要的js库-->
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //form表单的验证事件
+        $("#myForm").validate({
+            //验证规则  需要对哪些元素做验证
+            rules:{
+                userName:{
+                    required:true
+                },
+            password:{
+                required:true,
+                minlength:6,
+                maxlength:10
+            },
+           repPassword:{
+               required:true,
+               minlength:6,
+               maxlength:10,
+               equalTo:"#pwd"
+           },
+          email:{
+                    required:true,
+                    email:true
+           },
+                phone:{
+                    required:true
+                },
+                context:{
+                    required:true
+                }
+            },  //rules  end
+            //不符合验证规则的错误信息
+            messages:{
+                userName:{
+                    required:"请输入用户名"
+                },
+                password:{
+                    required:"请输入密码",
+                    minlength:"密码长度不能少于6位",
+                    maxlength:"密码长度不能大于10位"
+                },
+                repPassword:{
+                    required:"请输入密码",
+                    minlength:"密码长度不能少于6位",
+                    maxlength:"密码长度不能大于10位",
+                    equalTo:"两次密码输入不一致"
+                },
+                email:{
+                    required:"请输入邮箱",
+                    email:"邮箱格式不正确"
+                },
+                phone:{
+                    required:"请输入手机号"
+                },
+                context:{
+                    required:"您没有同意协议"
+                }
+            },  // messages  end
+            //鼠标失去焦点立即验证
+            onfocusout:function(element){
+                $(element).valid();
+            }
+
+        });
+
+
+    })
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
