@@ -1,6 +1,7 @@
-$(function() {
+var jq=$.noConflict();
+jq(function() {
     // 读取body data-type 判断是哪个页面然后执行相应页面方法，方法在下面。
-    var dataType = $('body').attr('data-type');
+    var dataType = jq('body').attr('data-type');
     console.log(dataType);
     for (key in pageData) {
         if (key == dataType) {
@@ -9,16 +10,16 @@ $(function() {
     }
     //     // 判断用户是否已有自己选择的模板风格
     //    if(storageLoad('SelcetColor')){
-    //      $('body').attr('class',storageLoad('SelcetColor').Color)
+    //      jq('body').attr('class',storageLoad('SelcetColor').Color)
     //    }else{
     //        storageSave(saveSelectColor);
-    //        $('body').attr('class','theme-black')
+    //        jq('body').attr('class','theme-black')
     //    }
 
     autoLeftNav();
-    $(window).resize(function() {
+    jq(window).resize(function() {
         autoLeftNav();
-        console.log($(window).width())
+        console.log(jq(window).width())
     });
 
     //    if(storageLoad('SelcetColor')){
@@ -35,7 +36,7 @@ var pageData = {
     // 首页
     // ===============================================
     'index': function indexData() {
-        $('#example-r').DataTable({
+        jq('#example-r').DataTable({
 
             bInfo: false, //页脚信息
             dom: 'ti'
@@ -312,13 +313,13 @@ var pageData = {
 
 // 风格切换
 
-$('.tpl-skiner-toggle').on('click', function() {
-    $('.tpl-skiner').toggleClass('active');
+jq('.tpl-skiner-toggle').on('click', function() {
+    jq('.tpl-skiner').toggleClass('active');
 })
 
-$('.tpl-skiner-content-bar').find('span').on('click', function() {
-    $('body').attr('class', $(this).attr('data-color'))
-    saveSelectColor.Color = $(this).attr('data-color');
+jq('.tpl-skiner-content-bar').find('span').on('click', function() {
+    jq('body').attr('class', jq(this).attr('data-color'))
+    saveSelectColor.Color = jq(this).attr('data-color');
     // 保存选择项
     storageSave(saveSelectColor);
 
@@ -334,32 +335,32 @@ function autoLeftNav() {
 
 
 
-    $('.tpl-header-switch-button').on('click', function() {
-        if ($('.left-sidebar').is('.active')) {
-            if ($(window).width() > 1024) {
-                $('.tpl-content-wrapper').removeClass('active');
+    jq('.tpl-header-switch-button').on('click', function() {
+        if (jq('.left-sidebar').is('.active')) {
+            if (jq(window).width() > 1024) {
+                jq('.tpl-content-wrapper').removeClass('active');
             }
-            $('.left-sidebar').removeClass('active');
+            jq('.left-sidebar').removeClass('active');
         } else {
 
-            $('.left-sidebar').addClass('active');
-            if ($(window).width() > 1024) {
-                $('.tpl-content-wrapper').addClass('active');
+            jq('.left-sidebar').addClass('active');
+            if (jq(window).width() > 1024) {
+                jq('.tpl-content-wrapper').addClass('active');
             }
         }
     })
 
-    if ($(window).width() < 1024) {
-        $('.left-sidebar').addClass('active');
+    if (jq(window).width() < 1024) {
+        jq('.left-sidebar').addClass('active');
     } else {
-        $('.left-sidebar').removeClass('active');
+        jq('.left-sidebar').removeClass('active');
     }
 }
 
 
 // 侧边菜单
-$('.sidebar-nav-sub-title').on('click', function() {
-    $(this).siblings('.sidebar-nav-sub').slideToggle(80)
+jq('.sidebar-nav-sub-title').on('click', function() {
+    jq(this).siblings('.sidebar-nav-sub').slideToggle(80)
         .end()
         .find('.sidebar-nav-sub-ico').toggleClass('sidebar-nav-sub-ico-rotate');
 })

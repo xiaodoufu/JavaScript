@@ -1,7 +1,7 @@
-var jq=$.noConflict();
-jq(function(){
+var a=jq.noConflict();
+a(function(){
     //form表单的验证事件
-    jq("#myForm").validate({
+    a("#myForm").validate({
         //验证规则  需要对哪些元素做验证
         rules:{
             userName:{
@@ -74,18 +74,18 @@ jq(function(){
         },  // messages  end
         //鼠标失去焦点立即验证
         onfocusout:function(element){
-            jq(element).valid();
+            a(element).valid();
         }
     });  //  end   validate
 
     //增加了手机验证正则
-    jQuery.validator.addMethod("checkPhone",function(value,element){
+    a.validator.addMethod("checkPhone",function(value,element){
         var tel = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/
         return this.optional(element) || (tel.test(value));
     },"电话号码格式不正确")
     //增加了身份证号验证正则
-    jQuery.validator.addMethod("checkPid",function(value,element){
-        var pid = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+    a.validator.addMethod("checkPid",function(value,element){
+        var pid = /(^\d{15}a)|(^\d{18}a)|(^\d{17}(\d|X|x)$)/
         return this.optional(element) || (pid.test(value));
     },"身份号码格式不正确")
 })
