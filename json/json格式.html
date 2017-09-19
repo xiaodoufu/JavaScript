@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>json格式</title>
+    <!--
+      json(JavaScript  Object  Notation) js对象标记！是一种数据交换格式！
+
+      json语法规则：
+          01.对象表现形式  key:value  键值对
+          02.多个数据之间使用逗号隔开       k1:v1,k2:v2
+          03.把对象放进大括号中 ｛name:"小黑",age:18 ｝
+          04.把集合放进中括号  [｛name:"小黑1",age:18 ｝,｛name1:"小黑2",age:18 ｝,｛name:"小黑3",age:18 ｝]
+    -->
+
+
+</head>
+<body>
+  <h1>json格式的对象</h1>
+  <div id="jsonObject"></div>
+  <h1>json格式的字符串数组</h1>
+  <select id="jsonArray"></select>
+  <h1>json格式的对象数组</h1>
+  <div id="jsonObjectArray"></div>
+
+
+
+
+
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript">
+    $(function(){
+         //01.定义json格式的对象
+        var  student={
+            id:1,
+            name:"admin",
+            sex:"男",
+            age:18
+        };
+        //向jsonObject中拼接数据
+        $("#jsonObject").append("ID:"+student.id+"<br/>"+"name:"+student.name+"<br/>")
+                .append("sex:"+student.sex+"<br/>"+"age:"+student.age+"<br/>")
+        //02.定义json格式的String类型的数组
+        var arrays=["对象表现形式  key:value  键值对","多个数据之间使用逗号隔开","把对象放进大括号中","数组放进中括号中"];
+        //把arrays转换成jquery对象  目的是 使用jquery对象特有的方法
+        var $arrs=$(arrays);
+        //  遍历数组 $arrs  向jsonArray中拼接数据
+        $arrs.each(function(i){
+            $("#jsonArray").append("<option value='"+(i+1)+"'>"+this+"</option>")
+        });
+        //03.定义json格式对象数组 List<Student>
+        var  students=[
+            {
+                id:1,
+                name:"admin1",
+                sex:"男",
+                age:18
+            },
+            {
+                id:2,
+                name:"admin2",
+                sex:"女",
+                age:81
+            }];
+     // 创建一个表格
+        var  $table=$("<table border='1'></table>")
+                .append("<tr><td>编号</td><td>姓名</td><td>性别</td><td>年龄</td></tr>")
+    //把数组转换成jquery对象
+        $(students).each(function(){
+            $table.append("<tr><td>"+this.id+"</td><td>"+this.name+"</td><td>"+this.sex+"</td><td>"+this.age+"</td></tr>")
+        })
+    //把创建的表格放进Div中
+        $("#jsonObjectArray").append($table);
+    });
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
