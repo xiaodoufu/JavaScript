@@ -1,13 +1,43 @@
-# JavaScript
-目的：  01.提升用户的体验  02.减轻服务器的压力
-组成部分：    01.ECMAScript规定了js的基本语法和基本对象    02.BOM(浏览器对象模型) 提供了处理网页内容的方法和接口    03.DOM(文档对象模型)   提供了与浏览器进行交互的方法和接口
+Html  
+结构化CSS 
+样式JavaScript 行为交互
+01.JavaScript基础
+02.JavaScript操作BOM对象
+03.JavaScript操作DOM对象   *****
+04.JavaScript的面向对象--------------------------------------
+05.jQuery (js)  .css   .js
+06.jQuery选择器        ******
+07.jQuery事件和动画
+08.jQuery操作DOM对象   ******
+09.表单验证
+10.表单验证的框架   jquery  validate11.bootstrap  封装了Html css  js
+
+JavaScript基础 （liveScript）  
+01.和java的关系，只是借势！  
+02.是一个脚本语言，以.js结尾  
+03.浏览器编译JavaScript,解析器我们称之为JavaScript引擎！  
+04.无需预编译    *****     
+js是一种弱语言类型  var a=10;    var a="101";  var a=new Date();  
+05.运行在客户端  ***** 减轻服务器的压力
+
+
+目的： 
+01.提升用户的体验 
+02.减轻服务器的压力
+组成部分：  
+01.ECMAScript规定了js的基本语法和基本对象   
+02.BOM(浏览器对象模型) 提供了处理网页内容的方法和接口  
+03.DOM(文档对象模型)   提供了与浏览器进行交互的方法和接口
 我们一个页面中可以引入css文件还可以引入js文件？    有没有顺序呢？
 01.css写在head中02.js文件的引入写在body的最下方
 
 
 js的引入方式：01.行内引入02.内部引入03.外部引入
 js中的常用事件
-  01.不想让a超链接 立即跳转至指定的页面  02.想让用户点击的时候 做一些处理工作  javascript:  伪协议     01.先去执行js代码     02.根据js代码做操作     alert('就是不跳转')   后续会换成某个操作的函数（方法）
+  01.不想让a超链接 立即跳转至指定的页面  
+  02.想让用户点击的时候 做一些处理工作  javascript:  伪协议   
+  01.先去执行js代码  
+  02.根据js代码做操作     alert('就是不跳转')   后续会换成某个操作的函数（方法）
     <a href="javascript:alert('就是不跳转')">跳转</a>
 伪协议   javascript:onclick 点击事件onblur  失去焦点事件onfocus 获取焦点事件
 
@@ -70,4 +100,6 @@ tabs选项卡功能的实现
  1.所有的对象 都有一个constructor属性，指向了构造函数！   document.write(stu1.constructor==Student+"<br/>"); 2. 创建构造函数的时候，会有一个属性叫prototype!    这个prototype指向了构造函数创建的那个原型对象！ 3.每个对象都有一个__proto__属性 指向了原型对象 （Student.prototype） 4.原型对象就是为其他对象创建共享的属性和方法的对象！ 5.Object没有指向,__proto__的值是null
  var  stu1={};     document.write(stu1.prototype+"<br/>");  //只有构造函数有     document.write(stu1.__proto__+"<br/>");  //默认执行Object
  原型链：      01.一个原型对象是另一个原型对象的实例！ 小黑狗是 黑狗的实例！  黑狗是狗的一个实例！      02.相关的原型链层层递进，就构成了实例和原型对象的链条！
+  继承实现的两种方式：  01.使用原型链  Dog.prototype=new Animal();  02.使用借用构造     Animal.call(this,'dog');  也可以直接传递参数
+  组合继承：就是把上诉的两种方式整合使用！
 
